@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Teacher Yani | Creative Online Tutor Portfolio</title>
+  <!-- Google Fonts: clean, modern, professional -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 (free icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #ffffff;
+      color: #1E2A3E;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 0;
+      flex-wrap: wrap;
+      border-bottom: 1px solid #eef2f6;
+    }
+
+    .logo h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #2563EB, #7C3AED);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      letter-spacing: -0.3px;
+    }
+
+    .logo p {
+      font-size: 0.85rem;
+      color: #5B6E8C;
+      font-weight: 400;
+    }
+
+    .nav-links a {
+      margin-left: 32px;
+      text-decoration: none;
+      color: #2D3A4F;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #2563EB;
+    }
+
+    /* buttons */
+    .btn-primary {
+      background: #2563EB;
+      color: white;
+      padding: 12px 28px;
+      border-radius: 40px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.25s ease;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 1rem;
+    }
+
+    .btn-primary:hover {
+      background: #1D4ED8;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.2);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid #CBD5E1;
+      padding: 10px 24px;
+      border-radius: 40px;
+      font-weight: 500;
+      color: #1E2A3E;
+      transition: all 0.2s;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-outline:hover {
+      border-color: #2563EB;
+      color: #2563EB;
+      background: #F8FAFE;
+    }
+
+    /* hero */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 48px;
+      padding: 64px 0 80px;
+    }
+
+    .hero-content {
+      flex: 1;
+    }
+
+    .hero-badge {
+      background: #EFF6FF;
+      color: #2563EB;
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+
+    .hero-content h1 {
+      font-size: 3.4rem;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -1px;
+      color: #0F172A;
+      margin-bottom: 20px;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      color: #475569;
+      margin-bottom: 32px;
+      max-width: 500px;
+    }
+
+    .subjects {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+
+    .subject-tag {
+      background: #F1F5F9;
+      padding: 6px 18px;
+      border-radius: 50px;
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+
+    .hero-image {
+      flex: 1;
+      background: linear-gradient(145deg, #F8FAFE, #F1F4F9);
+      border-radius: 48px;
+      padding: 32px;
+      text-align: center;
+      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.05);
+    }
+
+    .avatar-placeholder {
+      width: 220px;
+      height: 220px;
+      background: #ffffff;
+      border-radius: 100%;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.05);
+    }
+
+    .avatar-placeholder i {
+      font-size: 110px;
+      color: #2563EB;
+    }
+
+    .hero-image h3 {
+      font-weight: 700;
+      margin: 16px 0 4px;
+    }
+
+    /* section headings */
+    .section-heading {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: #0F172A;
+    }
+
+    .section-subhead {
+      color: #5B6E8C;
+      margin-bottom: 48px;
+      font-size: 1.1rem;
+      max-width: 700px;
+    }
+
+    /* cards */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 32px;
+      margin: 48px 0;
+    }
+
+    .service-card, .achievement-card, .skill-card {
+      background: #FFFFFF;
+      border-radius: 28px;
+      padding: 28px;
+      transition: all 0.25s;
+      border: 1px solid #EFF3F8;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    }
+
+    .service-card:hover, .achievement-card:hover {
+      transform: translateY(-6px);
+      border-color: #D9E6FF;
+      box-shadow: 0 20px 30px -12px rgba(0,0,0,0.08);
+    }
+
+    .icon-lg {
+      font-size: 2.5rem;
+      color: #2563EB;
+      margin-bottom: 20px;
+    }
+
+    .service-card h3, .achievement-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+    }
+
+    .badge-list {
+      list-style: none;
+      margin-top: 16px;
+    }
+
+    .badge-list li {
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .badge-list i {
+      color: #2563EB;
+      font-size: 0.9rem;
+    }
+
+    /* achievement grid */
+    .achievement-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .highlight-number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #2563EB;
+    }
+
+    /* steps */
+    .steps-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+      margin: 40px 0;
+    }
+    .step {
+      flex: 1;
+      background: #F9FBFE;
+      border-radius: 28px;
+      padding: 28px 20px;
+      text-align: center;
+      border: 1px solid #EDF2F7;
+    }
+    .step-number {
+      width: 48px;
+      height: 48px;
+      background: #2563EB10;
+      color: #2563EB;
+      font-weight: 800;
+      font-size: 1.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 60px;
+      margin: 0 auto 16px;
+    }
+
+    /* why choose */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 24px;
+      margin: 48px 0;
+    }
+    .why-item {
+      background: white;
+      padding: 18px 12px;
+      border-radius: 24px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      border: 1px solid #EEF2F8;
+    }
+    .why-item i {
+      font-size: 1.8rem;
+      color: #2563EB;
+    }
+
+    /* contact */
+    .contact-block {
+      background: #F0F7FF;
+      border-radius: 48px;
+      padding: 56px 40px;
+      text-align: center;
+      margin: 60px 0 40px;
+    }
+    .contact-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin: 32px 0 20px;
+    }
+    .contact-card {
+      background: white;
+      border-radius: 32px;
+      padding: 18px 28px;
+      min-width: 220px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+      transition: all 0.2s;
+    }
+    .contact-card i {
+      font-size: 1.6rem;
+      color: #2563EB;
+      margin-right: 12px;
+    }
+
+    footer {
+      border-top: 1px solid #EFF3F8;
+      padding: 40px 0;
+      text-align: center;
+      color: #6C7A91;
+    }
+
+    @media (max-width: 800px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+      .navbar {
+        flex-direction: column;
+        gap: 16px;
+      }
+      .nav-links a {
+        margin: 0 12px;
+      }
+      .container {
+        padding: 0 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- navigation -->
+  <div class="navbar">
+    <div class="logo">
+      <h1>Teacher Yani</h1>
+      <p>Creative Online Tutor · Elementary Specialist</p>
+    </div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#subjects">Subjects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+
+  <!-- hero section -->
+  <div class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">📚 1-on-1 Online Tutoring</div>
+      <h1>Building Confidence,<br>One Lesson at a Time</h1>
+      <p>Patient, engaging, and results-driven tutoring for elementary students in English, Filipino, and Mathematics — all from the comfort of home.</p>
+      <div class="subjects">
+        <span class="subject-tag">📖 English</span>
+        <span class="subject-tag">🇵🇭 Filipino</span>
+        <span class="subject-tag">🧮 Mathematics</span>
+      </div>
+      <a href="#contact" class="btn-primary" id="heroCta">Start the Learning Journey <i class="fas fa-arrow-right"></i></a>
+    </div>
+    <div class="hero-image">
+      <div class="avatar-placeholder">
+        <i class="fas fa-chalkboard-user"></i>
+      </div>
+      <h3>Teacher Yani</h3>
+      <p>Passionate & Creative Educator<br>Dedicated to Student Growth</p>
+      <div><i class="fas fa-star" style="color:#FBBF24;"></i> <i class="fas fa-star" style="color:#FBBF24;"></i> <i class="fas fa-star" style="color:#FBBF24;"></i> <i class="fas fa-star" style="color:#FBBF24;"></i> <i class="fas fa-star" style="color:#FBBF24;"></i> <span style="font-size:0.8rem;">parent recommended</span></div>
+    </div>
+  </div>
+
+  <!-- about teacher yani (updated: removed licensed professional reference) -->
+  <div id="about" style="scroll-margin-top: 80px;">
+    <div style="margin: 40px 0 20px;">
+      <span class="section-heading">About Teacher Yani</span>
+      <div class="section-subhead">Patient, dedicated, and focused on making learning joyful.</div>
+    </div>
+    <div style="background: #F9FBFE; border-radius: 32px; padding: 40px; margin-bottom: 40px;">
+      <p style="font-size: 1.2rem; line-height: 1.5; max-width: 90%;">Teacher Yani is a dedicated and patient online tutor who helps elementary students understand English, Filipino, and Mathematics in a clear and enjoyable way. Her teaching style focuses on <strong>simple explanations, interactive learning, and building student confidence</strong>. All tutoring sessions are conducted online via Google Meet so students can learn comfortably from home.</p>
+    </div>
+  </div>
+
+  <!-- ACHIEVEMENT BOARD -->
+  <div id="achievements" style="scroll-margin-top: 80px;">
+    <span class="section-heading">🏆 Academic Achievements & Recognition</span>
+    <div class="section-subhead">Proven excellence and consistent high performance.</div>
+    <div class="achievement-grid">
+      <div class="achievement-card"><i class="fas fa-medal icon-lg"></i><h3>With High Honors</h3><p>Grade 7 – Grade 12 · Consistent honors distinction</p></div>
+      <div class="achievement-card"><i class="fas fa-trophy icon-lg"></i><h3>With Highest Honors</h3><p>Grade 8 · General Weighted Average: <span class="highlight-number">98</span></p></div>
+      <div class="achievement-card"><i class="fas fa-comment-dots icon-lg"></i><h3>Outstanding in Communication Arts</h3><p>Excellence in English literacy and public speaking</p></div>
+      <div class="achievement-card"><i class="fas fa-language icon-lg"></i><h3>Proficient in:</h3><p>English · Filipino · Mathematics</p><div style="margin-top:8px;"><i class="fas fa-check-circle" style="color:#2563EB;"></i> Academic Excellence Award</div></div>
+      <div class="achievement-card"><i class="fas fa-handshake icon-lg"></i><h3>Strong Communication & Leadership</h3><p>Recognized for mentoring peers and clear instruction</p></div>
+      <div class="achievement-card"><i class="fas fa-chart-line icon-lg"></i><h3>Consistent Academic Excellence</h3><p>Honor roll every semester | Model student award</p></div>
+    </div>
+  </div>
+
+  <!-- SUBJECT SKILL TREE -->
+  <div id="subjects" style="scroll-margin-top: 80px; margin-top: 60px;">
+    <span class="section-heading">📚 Core Subjects — Skill Tree</span>
+    <div class="section-subhead">Structured learning paths designed to help students master key concepts.</div>
+    <div class="card-grid">
+      <div class="service-card">
+        <i class="fas fa-book-open icon-lg"></i>
+        <h3>English</h3>
+        <ul class="badge-list">
+          <li><i class="fas fa-check-circle"></i> Reading comprehension</li>
+          <li><i class="fas fa-check-circle"></i> Vocabulary building</li>
+          <li><i class="fas fa-check-circle"></i> Grammar basics & writing</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-globe-asia icon-lg"></i>
+        <h3>Filipino</h3>
+        <ul class="badge-list">
+          <li><i class="fas fa-check-circle"></i> Reading Filipino texts</li>
+          <li><i class="fas fa-check-circle"></i> Language comprehension</li>
+          <li><i class="fas fa-check-circle"></i> Written expression & vocabulary</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-calculator icon-lg"></i>
+        <h3>Mathematics</h3>
+        <ul class="badge-list">
+          <li><i class="fas fa-check-circle"></i> Problem-solving strategies</li>
+          <li><i class="fas fa-check-circle"></i> Basic concepts mastery</li>
+          <li><i class="fas fa-check-circle"></i> Quiz & exam preparation</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOW TUTORING WORKS -->
+  <div style="margin: 60px 0 20px;">
+    <span class="section-heading">✨ How Tutoring Works — Simple Steps</span>
+    <div class="section-subhead">From first message to learning success, we make it easy.</div>
+    <div class="steps-container">
+      <div class="step"><div class="step-number">1</div><h3>Message Teacher Yani</h3><p>Reach out via Facebook, call or text to discuss your child’s needs.</p></div>
+      <div class="step"><div class="step-number">2</div><h3>Schedule a Session</h3><p>Choose a time that fits your family’s schedule.</p></div>
+      <div class="step"><div class="step-number">3</div><h3>Join Google Meet Class</h3><p>Easy, secure video sessions — learn from anywhere.</p></div>
+      <div class="step"><div class="step-number">4</div><h3>Level Up Learning!</h3><p>Track progress, build confidence, and achieve goals.</p></div>
+    </div>
+  </div>
+
+  <!-- WHY CHOOSE TEACHER YANI -->
+  <div>
+    <span class="section-heading">💡 Why Parents & Students Choose Teacher Yani</span>
+    <div class="section-subhead">Warm, professional, and truly invested in every learner.</div>
+    <div class="why-grid">
+      <div class="why-item"><i class="fas fa-heart"></i> <span>Patient & friendly teaching style</span></div>
+      <div class="why-item"><i class="fas fa-list-ol"></i> <span>Clear step-by-step explanations</span></div>
+      <div class="why-item"><i class="fas fa-graduation-cap"></i> <span>Strong academic background</span></div>
+      <div class="why-item"><i class="fas fa-child"></i> <span>Focused on elementary students</span></div>
+      <div class="why-item"><i class="fas fa-laptop"></i> <span>Interactive online learning</span></div>
+      <div class="why-item"><i class="fas fa-pen-fancy"></i> <span>Homework help & lesson review</span></div>
+      <div class="why-item"><i class="fas fa-clipboard-list"></i> <span>Quiz and exam preparation</span></div>
+      <div class="why-item"><i class="fas fa-smile"></i> <span>Building long-term confidence</span></div>
+    </div>
+  </div>
+
+  <!-- CONTACT SECTION with updated Facebook link -->
+  <div id="contact" style="scroll-margin-top: 80px;">
+    <div class="contact-block">
+      <h2 style="font-size: 2rem; margin-bottom: 12px;">Start Your Child’s Learning Journey</h2>
+      <p style="font-size: 1.1rem; max-width: 550px; margin: 0 auto 24px;">Reach out today to ask about tutoring schedules, rates, and session details. I respond promptly!</p>
+      <div class="contact-buttons">
+        <div class="contact-card">
+          <i class="fab fa-facebook-messenger"></i> 
+          <strong>Message on Facebook</strong><br>
+          <span style="color:#475569;">Teacher Yani Page</span><br>
+          <button class="btn-outline" id="fbContactBtn" style="margin-top: 10px;"><i class="fab fa-facebook"></i> Send Message</button>
+        </div>
+        <div class="contact-card">
+          <i class="fas fa-phone-alt"></i>
+          <strong>Call or Text</strong><br>
+          <span style="font-size: 1.2rem; font-weight: 600;">0936 737 1269</span><br>
+          <button class="btn-outline" id="copyPhoneBtn" style="margin-top: 10px;"><i class="fas fa-copy"></i> Copy Number</button>
+        </div>
+      </div>
+      <p style="margin-top: 32px; font-size: 0.9rem;">📧 Feel free to message anytime — flexible schedules & free consultation.</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Teacher Yani — Creative Online Tutor for Elementary Students | Building brighter futures, one lesson at a time.</p>
+  </footer>
+</div>
+
+<script>
+  // Toast notification function
+  function showToast(message, bgColor = "#2563EB") {
+    let toast = document.createElement('div');
+    toast.innerText = message;
+    toast.style.position = 'fixed';
+    toast.style.bottom = '24px';
+    toast.style.left = '50%';
+    toast.style.transform = 'translateX(-50%)';
+    toast.style.backgroundColor = bgColor;
+    toast.style.color = 'white';
+    toast.style.padding = '12px 24px';
+    toast.style.borderRadius = '60px';
+    toast.style.fontWeight = '500';
+    toast.style.fontFamily = 'Inter, sans-serif';
+    toast.style.zIndex = '9999';
+    toast.style.boxShadow = '0 8px 20px rgba(0,0,0,0.1)';
+    toast.style.fontSize = '0.9rem';
+    document.body.appendChild(toast);
+    setTimeout(() => {
+      toast.style.opacity = '0';
+      toast.style.transition = 'opacity 0.2s';
+      setTimeout(() => toast.remove(), 300);
+    }, 2800);
+  }
+
+  // Hero button scroll to contact
+  const heroBtn = document.getElementById('heroCta');
+  if(heroBtn) {
+    heroBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+      showToast("📚 Ready to start? Let's talk!", "#2563EB");
+    });
+  }
+
+  // Facebook button - redirects to your specific profile page
+  const fbContact = document.getElementById('fbContactBtn');
+  if(fbContact) {
+    fbContact.addEventListener('click', () => {
+      window.open('https://www.facebook.com/profile.php?id=61576410824522', '_blank');
+      showToast("Opening Facebook — Teacher Yani will reply soon!", "#1E3A8A");
+    });
+  }
+
+  // Copy phone number button
+  const copyBtn = document.getElementById('copyPhoneBtn');
+  if(copyBtn) {
+    copyBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText("09367371269");
+      showToast("📞 Phone number copied: 09367371269", "#0F172A");
+    });
+  }
+
+  // Smooth scroll for navigation links
+  document.querySelectorAll('.nav-links a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href').substring(1);
+      const target = document.getElementById(targetId);
+      if(target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+  
+  // Subtle hover effects on achievement cards
+  const achievementCards = document.querySelectorAll('.achievement-card');
+  achievementCards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      let icon = card.querySelector('.icon-lg');
+      if(icon) icon.style.transform = 'scale(1.05)';
+      icon.style.transition = 'transform 0.2s';
+    });
+    card.addEventListener('mouseleave', () => {
+      let icon = card.querySelector('.icon-lg');
+      if(icon) icon.style.transform = 'scale(1)';
+    });
+  });
+
+  console.log("Teacher Yani's Portfolio — Professional & Creative Tutoring");
+</script>
+</body>
+</html>
